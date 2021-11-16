@@ -2,12 +2,15 @@ package Parandus;
 
 public class IpValidate {
 
-	public boolean ValidateIpv4Address(String string) {
-		if(string == "")
-		{
-			return false;
-		}
-		return true;
-	}
 
+	public Boolean ValidateIpv4Address(String ipString) {
+		if(ipString=="") {
+			return true;
+		}
+		return false;
+	}
+	
 }
+
+
+
