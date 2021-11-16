@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class IpValidateTests {
 
 	@Test
-	void ShouldReturnFalse_GivenEmptyStringParameter() {
+	void ShouldReturnTrue_GivenEmptyStringParameter() {
 		IpValidate validator= new IpValidate();
 		assertFalse(validator.ValidateIpv4Address(""));
 	}
