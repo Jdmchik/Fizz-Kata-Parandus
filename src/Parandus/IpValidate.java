@@ -9,7 +9,7 @@ public class IpValidate {
 		if(hasThreeDots(ipString)) {
 			return true;
 		}
-		return true;
+		return false;
 	}
 
 	private boolean hasThreeDots(String ipString) {
