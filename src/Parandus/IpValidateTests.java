@@ -15,12 +15,17 @@ public class IpValidateTests {
 	@Test
 	void ShouldBe_False_GivenStringWithThreeDots() {
 		IpValidate validator = new IpValidate();
-		assertTrue(validator.ValidateIpv4Address("1.2.3.1"));
+		assertTrue(validator.ValidateIpv4Address("..."));
 	}
 	@Test
 	void ShouldReturnFourNumbersGivenStringWithThreeDots() {
 		IpValidate validator = new IpValidate();
 		int[] expected = {1,2,3,4};
 		assertArrayEquals(expected,validator.getNumbers("1.2.3.4"));
+	}
+	@Test
+	void ShouldBe_False_GivenStringWithThreeNumbersAndDots() {
+		IpValidate validator = new IpValidate();
+		assertFalse(validator.ValidateIpv4Address("1.2.3."));
 	}
 }
