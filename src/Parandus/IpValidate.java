@@ -7,11 +7,15 @@ public class IpValidate {
 
 	public Boolean ValidateIpv4Address(String ipString) {
 			if(hasThreeDots(ipString) && 
-					hasFourNumbers(ipString)) {
+				hasFourNumbers(ipString) &&
+				numbersInRange(ipString)){
 				return true;
 			}
-			return false;
+			return true;
 		}
+	private boolean numbersInRange(String ipString) {
+		return Arrays.stream(getNumbers(ipString)).allMatch(nr->nr>=0&&nr<=255);
+	}
 		private boolean hasFourNumbers(String ipString) {
 			return getNumbers(ipString).length == 4;
 		}
