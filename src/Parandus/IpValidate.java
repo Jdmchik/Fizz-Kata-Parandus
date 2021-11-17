@@ -6,11 +6,15 @@ public class IpValidate {
 
 
 	public Boolean ValidateIpv4Address(String ipString) {
-		if(hasThreeDots(ipString)) {
-			return true;
+			if(hasThreeDots(ipString) && 
+					hasFourNumbers(ipString)) {
+				return true;
+			}
+			return false;
 		}
-		return false;
-	}
+		private boolean hasFourNumbers(String ipString) {
+			return getNumbers(ipString).length == 4;
+		}
 
 	private boolean hasThreeDots(String ipString) {
 		return ipString.chars().filter(c->c=='.').count()==3;
