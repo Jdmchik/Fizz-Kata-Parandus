@@ -53,6 +53,7 @@ public class IpValidateTests {
 	}
 	@Test
 	void ShouldBe_False_GivenIPendingWith255() {
-	
+		IpValidate validator= new IpValidate();
+		assertTrue(validator.ValidateIpv4Address("1.2.3.255"));
 	}
 }
