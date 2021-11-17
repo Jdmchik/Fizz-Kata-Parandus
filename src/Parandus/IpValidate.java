@@ -1,5 +1,7 @@
 package Parandus;
 
+import java.util.Arrays;
+
 public class IpValidate {
 
 
@@ -7,11 +9,14 @@ public class IpValidate {
 		if(hasThreeDots(ipString)) {
 			return true;
 		}
-		return false;
+		return true;
 	}
 
 	private boolean hasThreeDots(String ipString) {
 		return ipString.chars().filter(c->c=='.').count()==3;
+	}
+	public int[] getNumbers(String string) {
+		return Arrays.stream( string.split("\\.")).mapToInt(Integer::parseInt).toArray();
 	}
 
 }
