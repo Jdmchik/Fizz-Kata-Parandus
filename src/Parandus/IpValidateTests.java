@@ -39,6 +39,6 @@ public class IpValidateTests {
 	@Test
 	void ShouldBe_False_GivenIPstartingWithZero() {
 		IpValidate validator= new IpValidate();
-		assertTrue(validator.ValidateIpv4Address("0.2.3.4"));
+		assertFalse(validator.ValidateIpv4Address("0.2.3.4"));
 	}
 }
